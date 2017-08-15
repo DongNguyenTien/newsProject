@@ -29,17 +29,36 @@ class NewsPostController extends Controller
     }
     public function index()
     {
-        $newses = NewsPost::with('categories')->with('categories.category')
-            ->where('status', '>', NewsPost::STATUS_DELETED)
-            ->paginate(15);
+//        $newses = NewsPost::with('categories')->with('categories.category')
+//            ->where('status', '>', NewsPost::STATUS_DELETED)
+//            ->paginate(15);
 
-        return view('news::news_post.index', compact('newses'));
+        return view('news::news_post.index');
     }
 
     /**
      * Show the form for creating a new resource.
      * @return Response
      */
+    public function show()
+    {
+        return Datatables::of($this->post->getForDataTable())
+            ->escapeColumns([])
+            ->editColumn('published_at',function ($post){
+                Carbon::setLocale('vi');
+                return Carbon::parse($post->published_at)->diffForHumans();
+            })
+            ->editColumn('post_status',function ($post){
+                if($post->post_status ==1){
+                    return "<label class='label label-success'>Hoạt động</label>";
+                }elseif($post->post_status ==0){
+                    return "<label class='label label-warning'>Ẩn</label>";
+                }else{
+                    return "<label class='label label-danger'>Xóa</label>";
+                }
+            })
+            ->make(true);
+    }
     public function create()
     {
         // Get nested list categories
