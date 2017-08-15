@@ -57,6 +57,24 @@
             @endif
         @endforeach
     @endif
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="glyphicon glyphicon-pushpin"></i>
+                    <span>Post</span>
+                    <span class="pull-right-container">
+              <span class="label label-primary pull-right">4</span>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('news.news_post.index')}}"><i class="fa fa-circle-o"></i>All Post </a></li>
+                    <li><a href="boxed.html"><i class="fa fa-circle-o"></i>Add new</a></li>
+                    <li><a href="{{route('news.news_category.index')}}"><i class="fa fa-circle-o"></i> Categories</a></li>
+                    <li><a href="collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Tags</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </ul>
     <!-- /.sidebar-menu -->
 </section>
