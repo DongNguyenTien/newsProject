@@ -7,7 +7,7 @@ Route::group(['middleware' => 'web', 'prefix' => 'news', 'namespace' => 'Modules
     Route::resource('/news_category', 'NewsCategoryController', ['as' => 'news']);
     Route::resource('/news_post', 'NewsPostController', ['as' => 'news']);
 
-    Route::get('/news_post/get','NewsPostController@get')->name('news.get');
+    Route::get('/news_post/get','NewsPostController@get')->name('news.news_post.get');
 });
 
 /* API route */
