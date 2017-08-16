@@ -107,20 +107,24 @@
         tinymce.init({
             selector: '#post-data',
             height: 500,
-            menubar: true,
+            theme: 'modern',
             plugins: [
-                'advlist autolink lists link image charmap print preview anchor',
-                'searchreplace visualblocks code fullscreen',
-                'insertdatetime media table contextmenu paste code'
+                'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen',
+                'insertdatetime media nonbreaking save table contextmenu directionality',
+                'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc responsivefilemanager'
             ],
-            toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-            content_css: [
-                '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-                '//www.tinymce.com/css/codepen.min.css']
+            toolbar1: 'undo redo styleselect bold italic underline blockquote forecolor backcolor alignleft aligncenter alignright alignjustify bullist numlist outdent indent link table',
+            toolbar2: 'responsivefilemanager media emoticons preview fullscreen',
+            imagetools_toolbar: 'alignleft aligncenter alignright rotateleft rotateright flipv fliph editimage imageoptions',
+            image_advtab: true,
+            external_filemanager_path: "/admin-lte/plugins/filemanager/",
+            filemanager_title: "Công cụ quản lý file",
+            external_plugins: {"filemanager": "plugins/responsivefilemanager/plugin.min.js"}
         });
         $(function () {
             $('#datetimepicker1').datetimepicker({
-                format :"DD/MM/YYYY HH:mm"
+                format :"DD-MM-YYYY HH:mm"
             });
         });
     </script>
