@@ -2142,7 +2142,7 @@ class ComposerStaticInit942d1aa4a1cfc1fcce17f973cf7c268e
         'Modules\\News\\Providers\\NewsServiceProvider' => __DIR__ . '/../..' . '/Modules/News/Providers/NewsServiceProvider.php',
         'Modules\\News\\Repositories\\BaseRepository' => __DIR__ . '/../..' . '/Modules/News/Repositories/BaseRepository.php',
         'Modules\\News\\Repositories\\Categoryes\\CategoryRepository' => __DIR__ . '/../..' . '/Modules/News/Repositories/Categoryes/CategoryRepository.php',
-        'Modules\\Repositories\\Post\\PostRepository\\PostRepository' => __DIR__ . '/../..' . '/Modules/News/Repositories/Post/PostRepository.php',
+        'Modules\\News\\Repositories\\Post\\PostRepository' => __DIR__ . '/../..' . '/Modules/News/Repositories/Post/PostRepository.php',
         'Monolog\\ErrorHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ErrorHandler.php',
         'Monolog\\Formatter\\ChromePHPFormatter' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php',
         'Monolog\\Formatter\\ElasticaFormatter' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Formatter/ElasticaFormatter.php',

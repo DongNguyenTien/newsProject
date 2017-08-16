@@ -1807,7 +1807,7 @@ return array(
     'Modules\\News\\Providers\\NewsServiceProvider' => $baseDir . '/Modules/News/Providers/NewsServiceProvider.php',
     'Modules\\News\\Repositories\\BaseRepository' => $baseDir . '/Modules/News/Repositories/BaseRepository.php',
     'Modules\\News\\Repositories\\Categoryes\\CategoryRepository' => $baseDir . '/Modules/News/Repositories/Categoryes/CategoryRepository.php',
-    'Modules\\Repositories\\Post\\PostRepository\\PostRepository' => $baseDir . '/Modules/News/Repositories/Post/PostRepository.php',
+    'Modules\\News\\Repositories\\Post\\PostRepository' => $baseDir . '/Modules/News/Repositories/Post/PostRepository.php',
     'Monolog\\ErrorHandler' => $vendorDir . '/monolog/monolog/src/Monolog/ErrorHandler.php',
     'Monolog\\Formatter\\ChromePHPFormatter' => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php',
     'Monolog\\Formatter\\ElasticaFormatter' => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/ElasticaFormatter.php',

@@ -2,7 +2,6 @@
 
 namespace Modules\News\Repositories\Categoryes;
 
-
 use Modules\News\Repositories\BaseRepository;
 use Modules\News\Models\NewsCategory;
 

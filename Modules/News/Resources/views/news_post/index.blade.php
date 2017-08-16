@@ -31,8 +31,7 @@
                                     <th>Mô tả</th>
                                     <th>Trạng thái</th>
                                     <th>Thời gian phát hành</th>
-                                    {{--<th>Trạng thái</th>--}}
-                                    {{--<th class="actions" style="width: 80px;padding: 5px 0px">Actions</th>--}}
+                                    <th class="actions">Actions</th>
                                 </tr>
                                 </thead>
                             </table>
@@ -68,8 +67,8 @@
                     {data: 'title', sortable: false},
                     {data: 'summary', sortable: false},
                     {data: 'post_status', sortable: false},
-                    {data: 'published_at', sortable: false}
-//                    {data: 'actions', orderable: false}
+                    {data: 'published_at', sortable: false},
+                    {data: 'actions', orderable: false}
                 ],
                 "language": {
                     "lengthMenu": "Hiển thị _MENU_ bản ghi trên một trang",
