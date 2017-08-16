@@ -19,7 +19,10 @@ Route::get('/add-car', 'PagesController@addCar');
 
 Route::get('admin',function (){
     return 'admin';
-})->name('admin_home');
+})->name('admin_home')->middleware('auth');
 Route::get('logout',function (){
     return 'admin';
 })->name('admin_logout');
+Route::get('login', function(){
+    return 'login';
+});
