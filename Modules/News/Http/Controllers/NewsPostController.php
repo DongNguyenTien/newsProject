@@ -12,6 +12,7 @@ use Modules\News\Models\NewsPost;
 use Carbon\Carbon;
 use Yajra\Datatables\Datatables;
 use Modules\News\Repositories\Post\PostRepository;
+use Image;
 
 class NewsPostController extends Controller
 {
@@ -32,7 +33,6 @@ class NewsPostController extends Controller
 //        $newses = NewsPost::with('categories')->with('categories.category')
 //            ->where('status', '>', NewsPost::STATUS_DELETED)
 //            ->paginate(15);
-
         return view('news::news_post.index');
     }
 
@@ -79,8 +79,14 @@ class NewsPostController extends Controller
     public function store(Request $request)
     {
         try {
-            $data = $request->only(['title', 'thumbnail', 'summary', 'data', 'post_type', 'post_status']);
+            $data = $request->only(['title', 'summary', 'data', 'post_type', 'post_status']);
             $data['published_at'] = Carbon::parse($request->published_at)->toDateTimeString();
+            $img = $request->file('thumbnail')->getClientOriginalName();
+            $request->thumbnail->move('img/posts',$img);
+            $data['images'] = $img;
+            $thumnail = Image::make('img/posts/'.$img)->resize(300, 200);
+            $thumnail->save('img/posts/thumbnail/thumbnail_'.$img);
+            $data['thumbnail'] = 'thumbnail_'.$img;
             $post = NewsPost::create($data);
 
             // Update post category
@@ -121,7 +127,15 @@ class NewsPostController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $data = $request->only(['title', 'thumbnail', 'images', 'summary', 'data', 'post_type']);
+            $data = $request->only(['title', 'images', 'summary', 'data', 'post_type']);
+            if($request->hasFile('thumbnail')){
+                $img = $request->file('thumbnail')->getClientOriginalName();
+                $request->thumbnail->move('img/posts',$img);
+                $data['images'] = $img;
+                $thumnail = Image::make('img/posts/'.$img)->resize(300, 200);
+                $thumnail->save('img/posts/thumbnail/thumbnail_'.$img);
+                $data['thumbnail'] = 'thumbnail_'.$img;
+            }
 
             NewsPost::updateById($id, $data);
 

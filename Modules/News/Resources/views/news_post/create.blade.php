@@ -13,7 +13,7 @@
     </section>
     <section class="content">
         <div class="box box-primary">
-            <form class="form-add-insurance-company" method="post" action="{{ route('news.news_post.index') }}">
+            <form class="form-add-insurance-company" method="post" action="{{ route('news.news_post.index') }}" enctype="multipart/form-data">
                 <div class="box-header with-border">
                     <h3 class="box-title">Thêm bài viết</h3>
                 </div>
