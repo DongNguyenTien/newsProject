@@ -57,6 +57,10 @@ class NewsPostController extends Controller
                     return "<label class='label label-danger'>Xóa</label>";
                 }
             })
+            ->addColumn('actions',function ($post){
+                $html   = view('news::includes.post.colum',['module' => 'actions', 'column' => 'actions','post'=>$post])->render();
+                return $html;
+            })
             ->make(true);
     }
     public function create()

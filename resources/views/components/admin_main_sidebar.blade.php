@@ -57,6 +57,21 @@
             @endif
         @endforeach
     @endif
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>Bài viết</span>
+                <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu" style="display: none;">
+                <li><a href="{{route('news.news_post.index')}}"><i class="fa fa-circle-o"></i> Tất cả bài viết</a></li>
+                <li><a href="{{route('news.news_post.create')}}"><i class="fa fa-circle-o"></i> Thêm bài viết</a></li>
+                <li><a href="{{route('news.news_category.index')}}"><i class="fa fa-circle-o"></i> Danh mục</a></li>
+                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Tags</a></li>
+            </ul>
+        </li>
     </ul>
     <!-- /.sidebar-menu -->
 </section>

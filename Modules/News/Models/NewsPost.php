@@ -16,6 +16,10 @@ class NewsPost extends Model
     {
         return $this->hasMany('Modules\News\Models\NewsCategoryPost', 'post_id');
     }
+    public function tags()
+    {
+        return $this->belongsToMany('Modules\News\Models\NewsTag','news_tags_post','post_id','tag_id');
+    }
 
     /**
      * @param $id

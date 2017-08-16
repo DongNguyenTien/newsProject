@@ -25,7 +25,7 @@
                         @endforeach
                     @endif
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-offset-3 col-md-6">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Tên danh mục</label>
                                 <input name="name" type="text" value="{{ old('name') }}" class="form-control" placeholder="Nhập vào tên danh mục">
